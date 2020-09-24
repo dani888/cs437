@@ -1,0 +1,36 @@
+body {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+}
+main {
+	width: 900px;
+	margin: 0 auto;
+	padding: 2em;
+	background: lightblue;
+	border: 3px solid black;
+
+}
+h1 {
+	color: red;
+}
+label {
+	float: left;
+	width: 10em;
+	padding-right: 1em;
+	padding-bottom: .5em;
+}
+#data input {
+	float: left;
+	width: 15em;
+	margin-bottom: .5em;
+}
+#data span {
+	padding-left: .25em;
+}
+#buttons input {
+	float: left;
+	margin-bottom: .5em;
+}
+br {
+	clear: left;
+}

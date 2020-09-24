@@ -1,0 +1,107 @@
+
+<!-- saved from url=(0037)https://www.cs.umb.edu/cs637/hw1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="generator" content="HTML Tidy for Windows (vers 25 March 2009), see www.w3.org">
+    <title>CS637 hw1</title>
+  </head>
+  <body>
+    <div>
+      <h2>CS637 Homework 1 SQL review, HTTP, HTML5 part 1, mysql, php, setup</h2>
+      <p>Due Monday, Sept. 16 in class, on paper. Be sure to get a UNIX/Linux
+        account for cs637 by Monday, Sept. 9, to list your username for the
+        needed mysql account, and gain access to topcat.cs.umb.edu.<br>
+        <br>
+        1. a. Basic HTML and URLs: if you really know HTML, you can skip part a.
+        of this problem. Just state so on your homework submission<span style="font-weight: bold;">.
+        </span>Read Chap. 1-3 of Duckett for basic HTML. Learn about absolute
+        and relative URLs, by reading Chap. 4 of Duckett and looking at the
+        examples in Murach &amp; Harris (M&amp;H), pg. 29 (either edition) For
+        more practice (optional), go through the HTML tutorial at <a href="http://www.w3schools.com/html/">http://www.w3schools.com/html/</a>
+        through "HTML Lists". Use a plain editor to compose a web page
+        test1.html with page title "My title", contents entitled "Important
+        links", and a relative link to a copy of this file (hw1.html) named
+        hw1copy.html, also in the same directory on the server, and an absolute
+        link to the root of our departmental website, with appropriate
+        descriptive text&nbsp;for the user to see. &nbsp;Include the text of
+        test1.html in your homework submission.</p>
+      <p>b. HTTP. Since hw1.html is in directory cs637 of our webserver's
+        document root, its URL is http://www.cs.umb.edu/cs637/hw1.html, as you
+        can verify by browsing to to this URL in your browser. Show the HTTP GET
+        request and response, to the level of detail of the example shown on pg.
+        7 of M&amp;H and also on slide 16 for the first class. Our server is <span style="color: rgb(34, 34, 34); font-family: Consolas, &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Apache/2.4.18.</span></p>
+      <div> </div>
+      <p>2. Review SQL. Read M&amp;H Chap. 18. Go to <a href="http://sqlzoo.net/">sqlzoo.net</a>,&nbsp;
+        Pull down the Tutorials menu, and select the following tutorials: </p>
+      <ul>
+        <li> Select from Nobel:&nbsp; 4, 7&nbsp; (number them&nbsp; 1-4,
+          1-7)&nbsp; For 7, use LIKE to match part of the winner name.</li>
+        <li> Select within select: &nbsp;2, 4, 6&nbsp;&nbsp;(2-2, etc.)</li>
+        <li> Sum and count: 2, 4, 6</li>
+        <li> More Joins: 3, 6, 7, 9 </li>
+      </ul>
+      <p>Show your answers (copy and paste the SQL query). If an error message
+        seems useless, try another database for the query--it might give better
+        error messages.<br>
+        <br>
+        3 MySQL. Within a week, user ronghui, for example, will have an account
+        on mysql on topcat with username ronghui, password ronghui, and a
+        database named ronghuidb.&nbsp; To access it, login to topcat and use
+        the command:</p>
+      <p><code>mysql -u ronghui -D ronghuidb -p</code></p>
+      <p>and enter ronghui at the password prompt.&nbsp; Another way is shown on
+        pg. 111 of M&amp;H:</p>
+      <p><code>mysql -u ronghui -p</code><code></code><code><br>
+          Enter password: ronghui</code><code><br>
+          use ronghuidb</code> </p>
+      <p>Verify your mysql account is working by logging in to system
+        topcat.cs.umb.edu and using the mysql command. See <a href="https://www.cs.umb.edu/cs637/AccessToCSHosts.html">Access
+          to cs.umb.edu systems from offsite</a> for instructions on logging in
+        from offsite. </p>
+      <p>a. Create a table named t1 with columns "id", and integer, and
+        "message", a varchar(40). Insert 2 rows into it and then display the
+        rows.&nbsp; Show a script of this session in your homework. To make a
+        script, type <code>script </code>at the Linux prompt before using the
+        mysql command, then do the database work, exit from mysql, and do
+        another exit to finish the script.</p>
+      <ul>
+      </ul>
+      b. Note that the book applications are available at <a href="http://topcat.cs.umb.edu/book_apps">http://topcat.cs.umb.edu/book_apps</a>
+      on the web and since the web server <i>document root </i>is at
+      /var/www/html on topcat, they are available in the topcat filesystem at
+      /var/www/html/book_apps. Copy the SQL script my_guitar_shop1.sql from the
+      _create_db subdirectory to your cs637/hw1 homework directory on topcat.
+      Try to load your mysql database on topcat with this script and report on
+      your success or problems.&nbsp; Note: You will need to edit out the create
+      database and create user commands from my_guitar_shop1.sql, as you have
+      access only to your own database, and no privileges to create additional
+      users.
+      <ul>
+      </ul>
+      <p>4. a. Until students have XAMPP installed, we'll use topcat for simple
+        PHP execution from the command line.&nbsp; Code up the future value for
+        loop of pg. 77 (either edition) in a complete php program
+        future_value.php and execute it from the command line: <code>topcat$
+          php future_value.php</code>. Create directory hw1 in your cs637
+        directory on topcat and put future_value.php in it, making it have a
+        filesystem path ~/cs637/hw1/future_value.php. The original code is
+        available in book_apps/ch02_future_value/display_results.php, i.e. full
+        filesystem path
+        /var/www/html/book_apps/ch02_future_value/display_results.php. If
+        necessary (2nd ed), replace "$future_value =" with "$future_value +=
+        ..." that calculates the same amounts. Note that your program should
+        have no HTML in it, since there is no browser involved here. Use echo to
+        print the answer. Show your program in your homework paper and report
+        your success or problems running it. </p>
+      <p>b. Run the future value example as a web application by browsing to <code>http://topcat.cs.umb.edu/book_apps/ch02_future_value/</code>.
+        Try out valid values and invalid values as shown on pg. 81 (either
+        edition). Note that if some of the fields are valid and others invalid,
+        the form is redisplayed with the valid values filled in. Users hate to
+        loose valid input!&nbsp; Make the app display a different error message,
+        and explain what you did to make it happen.</p>
+      <p>5. Report on your <a href="https://www.cs.umb.edu/cs637/DevelopmentSetup.html">DevelopmentSetup</a>
+        progress and/or problems.&nbsp; </p>
+    </div>
+  
+
+</body></html>
